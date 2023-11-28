@@ -34,7 +34,7 @@ struct MyProductDetailView: View {
                 
                 //                let _: String = myProducts.thumbnailImage.isEmpty ? "" : (myProducts.thumbnailImage )
                 
-                ForEach(userInstore.myDevices ?? [] ,id:\.self) { product in
+                ForEach(userInstore.myDevices ,id:\.self) { product in
                     HStack{
                         //                        // 기기 사진
                         AsyncImage(url: URL(string: product.deviceImage )) { image in
@@ -72,7 +72,7 @@ struct MyProductDetailView: View {
                     // 추천 제품 이미지 사용 예정
                     TabView() {
                         
-                        ForEach(catalogueProductStore.catalogueProductStores, id:\.self){ product in
+                        ForEach(catalogueProductStore.catalogueProducts, id:\.self){ product in
                             if product.model?.contains(myProducts.productName) == true {
                                 //model = prodcut.Name 같은것만 디테일 뷰로 넘기기
                                 NavigationLink {
@@ -138,7 +138,7 @@ struct MyProductDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         .onAppear {
-            for catalogItem in catalogueProductStore.catalogueProductStores {
+            for catalogItem in catalogueProductStore.catalogueProducts {
                 if catalogItem.model?.contains(myProducts.productName) == true {
                     accessoryCount += 1
                 }

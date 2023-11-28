@@ -28,5 +28,4 @@ struct CatalogueProduct: Identifiable, Codable, Hashable {
     // MARK: MAC 추가 프로퍼티
     var processor: [String]? // 맥북에 들어간 SOC(Processor) 종류가 들어감
     var memory: [String]? // 맥북에 들어간 Memory 종류가 들어감
-    
 }

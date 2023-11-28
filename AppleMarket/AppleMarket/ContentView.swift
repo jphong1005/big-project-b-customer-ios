@@ -68,8 +68,10 @@ struct ContentView: View {
                         userInfoStore.emailAuthSignIn(email: email, password: password)
                     }
                 }
+                
+                /// 여기서는 Main Thread에서 실행됨
                 await productStore.fetchProduct()
-                catalogueProductStore.fetchData()
+                await catalogueProductStore.fetchCatalogueProduct()
                 if userInfoStore.userInfo != nil {
                     cartStore.fetchCart(uid: userInfoStore.userInfo?.userId ?? "")
                     orderStore.fetchOrderList(userId: userInfoStore.userInfo?.userId ?? "" )

@@ -181,9 +181,9 @@ extension MainProductDetailView {
         var filtered : [CatalogueProduct]
         
         if category == "" {
-            filtered = catalogueProductStore.catalogueProductStores
+            filtered = catalogueProductStore.catalogueProducts
         } else {
-            filtered = catalogueProductStore.catalogueProductStores.filter({$0.category == self.category})
+            filtered = catalogueProductStore.catalogueProducts.filter({$0.category == self.category})
         }
         
         

@@ -81,7 +81,7 @@ struct SearchView: View {
             print("SearchView change 1")
             viewModel.searchingState = .none
             //print(viewModel.searchResults)
-            viewModel.searchResults = catalogueProductStore.catalogueProductStores.filter({ $0.productName.localizedCaseInsensitiveContains(input)})
+            viewModel.searchResults = catalogueProductStore.catalogueProducts.filter({ $0.productName.localizedCaseInsensitiveContains(input)})
                 
         }
         .onChange(of: viewModel.searchingState ){ state in

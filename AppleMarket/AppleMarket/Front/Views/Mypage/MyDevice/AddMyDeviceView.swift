@@ -99,13 +99,13 @@ struct AddMyDeviceView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 15) {
                     
-                    ForEach(0 ..< catalogueProductStore.catalogueProductStores.count, id: \.self) {
+                    ForEach(0 ..< catalogueProductStore.catalogueProducts.count, id: \.self) {
                         index in
-                        ForEach(catalogueProductStore.catalogueProductStores[index].model ?? [], id: \.self) { model in
-                            if catalogueProductStore.catalogueProductStores[index].category.contains(selectedProductCategory) {
+                        ForEach(catalogueProductStore.catalogueProducts[index].model ?? [], id: \.self) { model in
+                            if catalogueProductStore.catalogueProducts[index].category.contains(selectedProductCategory) {
                                 Button {
-                                    deviceImage = catalogueProductStore.catalogueProductStores[index].thumbnailImage
-                                    deviceType = catalogueProductStore.catalogueProductStores[index].category
+                                    deviceImage = catalogueProductStore.catalogueProducts[index].thumbnailImage
+                                    deviceType = catalogueProductStore.catalogueProducts[index].category
                                     categoryIndex = index
                                     print("디바이스 이미지는 \(deviceImage), 디바이스 이름은 \(deviceType)")
                                     print("\(deviceDescription)의 \(selectedProductCategory)")

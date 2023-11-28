@@ -87,7 +87,7 @@ struct MainMyProductView: View {
             //등록된 기기가 있을 때
             else {
                 TabView() {
-                    ForEach(userInfoStore.myDevices ?? [], id: \.self) { product in
+                    ForEach(userInfoStore.myDevices , id: \.self) { product in
                         NavigationLink {
                             MyProductDetailView(myProducts: CatalogueProduct(id: "", productName: product.deviceName, device: [], category: "", description: "", price: 0, thumbnailImage: "", status: 0, descriptionImages: [product.deviceImage], model: [], color: [], storage: [], recommendedProduct: [], netWork: [], processor: [], memory: []))
                         } label: {
